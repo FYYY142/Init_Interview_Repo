@@ -5,6 +5,11 @@ const authRoutes = require('./routes/authRoutes'); // 认证相关的路由
 const authMiddleware = require('./middleware/authMiddleware'); // JWT认证中间件
 
 
+// 测试数据库连接
+sequelize.authenticate()
+  .then(() => console.log('Database connected.'))
+  .catch(err => console.error('Unable to connect to the database:', err));
+module.exports = sequelize;
 
 
 // 中间件
