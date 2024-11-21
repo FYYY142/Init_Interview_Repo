@@ -12,12 +12,16 @@ db.syncDatabase()
 // 中间件
 app.use(express.json()); // 用于解析JSON请求体
 app.use(express.urlencoded({ extended: true })); // 用于解析URL编码数据
+
 app.use('/auth', authRoutes); // 使用 /auth 路径挂载认证路由
 
 // 404错误处理
 app.use((req, res, next) => {
     res.status(404).json({ message: 'Route not found' });
 });
+
+
+
 
 // 全局错误处理
 app.use((err, req, res, next) => {
