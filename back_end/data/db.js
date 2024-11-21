@@ -1,3 +1,5 @@
+//数据库操作封装
+
 import { Sequelize, DataTypes } from 'sequelize';
 import path from 'path';
 
